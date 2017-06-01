@@ -156,7 +156,7 @@ public class VoiceChatbotTest {
 				  expectedVisualResponse = expectedVisualResponses.get(index);
 				  fileName = s.toLowerCase().replace(' ', '_')+"_noise.wav";
 				  PerfectoUtils.injectAudio(driver, System.getenv().get("PERFECTO_CLOUD_REPOSITORY_KEY")+fileName);	  
-				  recordings.add(listen(driver, true, expectedVisualResponse, 15));
+				  recordings.add(VoiceServices.listen(driver, true, expectedVisualResponse, 15));
 
 				  index = index +1;
 				  if (index < sentences.size())
@@ -190,26 +190,6 @@ public class VoiceChatbotTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	  }
-	  private static String listen(RemoteWebDriver driver, boolean waitForVisualValidation, String visualValidation, int seconds) throws IOException, InterruptedException{
-
-		  String response = "";
-		  try {
-			  String audioFileRecording = PerfectoUtils.startAudioRecording(driver);
-			  if (waitForVisualValidation){
-				  PerfectoUtils.ocrTextCheck(driver, visualValidation, 90, 20);
-				  long UXtimer = PerfectoUtils.getUXTimer(driver);
-				  System.out.println("Expected visual response: "+ visualValidation + " Took: " + UXtimer+ " milliseconds");
-			  } else
-				  Thread.sleep(seconds * 1000);
-			  PerfectoUtils.stopAudioRecording(driver);
-			  return audioFileRecording;
-		  } catch (Exception e) {
-			  // TODO Auto-generated catch block
-			  e.printStackTrace();
-		  }
-		  return response;
 
 	  }
 

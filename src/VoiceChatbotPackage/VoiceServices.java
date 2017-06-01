@@ -12,6 +12,8 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import com.ibm.watson.developer_cloud.speech_to_text.v1.SpeechToText;
 import com.ibm.watson.developer_cloud.speech_to_text.v1.model.SpeechResults;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.TextToSpeech;
@@ -20,6 +22,7 @@ import com.ibm.watson.developer_cloud.text_to_speech.v1.model.Voice;
 import com.ibm.watson.developer_cloud.text_to_speech.v1.util.WaveUtils;
 
 import perfecto.PerfectoLabUtils;
+import perfecto.PerfectoUtils;
 
 public abstract class VoiceServices{
 	private static SpeechToText S2Tservice = null;
@@ -45,7 +48,7 @@ public abstract class VoiceServices{
 		System.out.println(transcript);
 		return transcript.toString();		
 	}
-	
+
 	public static void textToSpeech(String text, String filePath, boolean uploadToPerfectoCloud, String repositoryKey){
 		textToSpeech(text, filePath, uploadToPerfectoCloud, repositoryKey, Voice.EN_ALLISON, true);
 	}
@@ -76,14 +79,35 @@ public abstract class VoiceServices{
 			e.printStackTrace();
 		}
 	}
+	public static String listen(RemoteWebDriver driver, boolean waitForVisualValidation, String visualValidation, int seconds) throws IOException, InterruptedException{
+
+		String response = "";
+		try {
+			String audioFileRecording = PerfectoUtils.startAudioRecording(driver);
+			if (waitForVisualValidation){
+				PerfectoUtils.ocrTextCheck(driver, visualValidation, 90, 20);
+				long UXtimer = PerfectoUtils.getUXTimer(driver);
+				System.out.println("Expected visual response: "+ visualValidation + " Took: " + UXtimer+ " milliseconds");
+			} else
+				Thread.sleep(seconds * 1000);
+			PerfectoUtils.stopAudioRecording(driver);
+			return audioFileRecording;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return response;
+
+	}
+
 	private static Path download(String sourceURL) throws IOException
 	{
-	    URL url = new URL(sourceURL);
-	    String fileName = sourceURL.substring(sourceURL.lastIndexOf('/') + 1, sourceURL.length());
-	    Path targetPath = new File(System.getenv().get("Project_Path")+"/media/" + fileName).toPath();
-	    Files.copy(url.openStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
+		URL url = new URL(sourceURL);
+		String fileName = sourceURL.substring(sourceURL.lastIndexOf('/') + 1, sourceURL.length());
+		Path targetPath = new File(System.getenv().get("Project_Path")+"/media/" + fileName).toPath();
+		Files.copy(url.openStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
 
-	    return targetPath;
+		return targetPath;
 	}
 
 }
