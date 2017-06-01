@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+<!-- 
+		<parameter name="platformName" value="Android" />
+		<parameter name="manufacturer" value="Samsung" />
+		<parameter name="platformVersion" value="7.0" />
+		<parameter name="model" value="Galaxy S7 Edge" />
+		<parameter name="deviceName" value="C538899C" />
+ -->
+		<parameter name="platformName" value="iOS" />
+		<parameter name="manufacturer" value="Apple" />
+		<parameter name="platformVersion" value="9.2.1" />
+		<parameter name="model" value="iPhone-6" />
+		<parameter name="deviceName" value="61F28E0775D8B0B57388E72D176AFE91A6248B39" />
+
+
+		<parameter name="appID" value="dummy" />
+    <classes>
+      <class name="VoiceChatbotPackage.VoiceChatbotTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
