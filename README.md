@@ -7,11 +7,14 @@ Perfecto will record the audio response and wait for visual match of the expecte
 Perfecto will then convert the recorded audio to text and conduct the relevant validations.
 In this approach it is possible to opt to conduct textual validations on the screen and measure response times, and/or add validation of the spoken response.
  
+
 Notes:
 
 - Select the device of choice in testNG.xml
 
 - Ensure you have the environment variables setup correctly
+
+- Siri integration requires more attention, will be fixed soon
 
 Functions of interest:
 
