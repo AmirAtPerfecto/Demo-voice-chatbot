@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="tests">
+	<test name="Android S6" enabled="true">
+		<parameter name="platformName" value="Android" />
+		<parameter name="manufacturer" value="Samsung" />
+		<parameter name="platformVersion" value="6.0.1" />
+		<parameter name="model" value="Galaxy S6" />
+		<parameter name="deviceName" value="06157DF630F5DF30" />
+		<parameter name="appID" value="dummy" />
+		<classes>
+			<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
+		</classes>
+	</test> <!-- Test -->
+  <test name="Android S7 EDGE" enabled="false">
+	  <parameter name="platformName" value="Android" />
+	  <parameter name="manufacturer" value="Samsung" />
+	  <parameter name="platformVersion" value="7.0" />
+	  <parameter name="model" value="Galaxy S7 Edge" />
+	  <parameter name="deviceName" value="C538899C" />
+	  <parameter name="appID" value="dummy" />
+    <classes>
+		<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
+    </classes>
+  </test> <!-- Test -->
+	<test name="Android S7" enabled="false">
+		<parameter name="platformName" value="Android" />
+		<parameter name="manufacturer" value="Samsung" />
+		<parameter name="platformVersion" value="7.0" />
+		<parameter name="model" value="Galaxy S7" />
+		<parameter name="deviceName" value="E466DBC9" />
+		<parameter name="appID" value="dummy" />
+		<classes>
+			<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
+		</classes>
+	</test> <!-- Test -->
+	<test name="iOS" enabled="false">
+		<parameter name="platformName" value="iOS" />
+		<parameter name="manufacturer" value="Apple" />
+		<parameter name="platformVersion" value="9.2.1" />
+		<parameter name="model" value="iPhone-6" />
+		<parameter name="deviceName" value="61F28E0775D8B0B57388E72D176AFE91A6248B39" />
+		<parameter name="appID" value="dummy" />
+		<classes>
+			<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+

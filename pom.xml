@@ -18,9 +18,9 @@
   </build>
         <dependencies>
     <dependency>
-  <groupId>com.ibm.watson.developer_cloud</groupId>
-  <artifactId>java-sdk</artifactId>
-  <version>3.8.0</version>
-</dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.11</version>
+    </dependency>
       </dependencies>
 </project>

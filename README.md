@@ -1,6 +1,7 @@
 # Demo-voice-chatbot
 Demonstrating Google Assistant and Siri
 This project demonstrates interation with these chatbots over voice.
+Please note, audio functions in Perfecto require separate licensing.
 The input is text. Perfecto will translate the text into voice and inject to the device.
 Perfecto will record the audio response and wait for visual match of the expected result.
 Perfecto will then convert the recorded audio to text and conduct the relevant validations.
@@ -10,11 +11,7 @@ Notes:
 
 - Select the device of choice in testNG.xml
 
-- Add "media" folder to your project
-
-- Ensure you have the environment variables setup correctly (see environment variables png) 
-
-- Audio files need to be uploaded to the cloud repository. Note synthetic audio files will not work without some noise injected before and after the actual speech.
+- Ensure you have the environment variables setup correctly
 
 Functions of interest:
 
