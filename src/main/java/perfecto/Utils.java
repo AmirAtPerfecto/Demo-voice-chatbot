@@ -36,7 +36,8 @@ public class Utils {
 //	        if (null != appType)
 //	        	capabilities.setCapability(appType, appID); //app id
 //	        capabilities.setCapability("winAppId", "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!App"); //app id
-	        capabilities.setCapability("deviceName", deviceName);
+	        if ("" != deviceName)
+				capabilities.setCapability("deviceName", deviceName);
 	        // Use the automationName capability to define the required framework - Appium (this is the default) or PerfectoMobile.
 	        capabilities.setCapability("automationName", "Appium");
 	        //TODO: Audio setup

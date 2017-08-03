@@ -6,7 +6,7 @@
 		<parameter name="manufacturer" value="Samsung" />
 		<parameter name="platformVersion" value="6.0.1" />
 		<parameter name="model" value="Galaxy S6" />
-		<parameter name="deviceName" value="06157DF630F5DF30" />
+		<parameter name="deviceName" value="" />
 		<parameter name="appID" value="dummy" />
 		<classes>
 			<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
@@ -17,7 +17,7 @@
 	  <parameter name="manufacturer" value="Samsung" />
 	  <parameter name="platformVersion" value="7.0" />
 	  <parameter name="model" value="Galaxy S7 Edge" />
-	  <parameter name="deviceName" value="C538899C" />
+	  <parameter name="deviceName" value="" />
 	  <parameter name="appID" value="dummy" />
     <classes>
 		<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
@@ -28,7 +28,7 @@
 		<parameter name="manufacturer" value="Samsung" />
 		<parameter name="platformVersion" value="7.0" />
 		<parameter name="model" value="Galaxy S7" />
-		<parameter name="deviceName" value="E466DBC9" />
+		<parameter name="deviceName" value="" />
 		<parameter name="appID" value="dummy" />
 		<classes>
 			<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
@@ -39,7 +39,7 @@
 		<parameter name="manufacturer" value="Apple" />
 		<parameter name="platformVersion" value="9.2.1" />
 		<parameter name="model" value="iPhone-6" />
-		<parameter name="deviceName" value="61F28E0775D8B0B57388E72D176AFE91A6248B39" />
+		<parameter name="deviceName" value="" />
 		<parameter name="appID" value="dummy" />
 		<classes>
 			<class name="VoiceChatbotPackage.VoiceChatbotTest"/>
